@@ -1275,6 +1275,7 @@ static const int64 nMinSubsidy = 1 * COIN;
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = nStartSubsidy;
+    
     if (nHeight == 1) return 20608 * COIN;
     else
     if (nHeight > 2000) {
@@ -1298,8 +1299,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 600; 
-static const int64 nTargetSpacing = 600; 
+static const int64 nTargetTimespan = 360; 
+static const int64 nTargetSpacing = 360; 
 static const int64 nInterval = 1; // retargets every blocks;
 
 static const int64 nTargetTimespanDigi = 360; 
