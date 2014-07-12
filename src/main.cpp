@@ -1278,14 +1278,29 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     
     if (nHeight == 1) return 20608 * COIN;
     else
-    if (nHeight > 2000) {
-	nSubsidy = 16 * COIN;
-        nSubsidy >>= (nHeight - 2000 / Params().SubsidyHalvingInterval());
+    if (nHeight > 6000) {
+	nSubsidy = 1 * COIN;
+        nSubsidy >>= (nHeight - 6000 / Params().SubsidyHalvingInterval());
+    }
+    else
+    if (nHeight > 5000) {
+	nSubsidy = 2 * COIN;
+        nSubsidy >>= (nHeight - 5000 / Params().SubsidyHalvingInterval());
+    }
+    else
+    if (nHeight > 4000) {
+	nSubsidy = 4 * COIN;
+        nSubsidy >>= (nHeight - 4000 / Params().SubsidyHalvingInterval());
     }
     else
     if (nHeight > 3000) {
 	nSubsidy = 8 * COIN;
         nSubsidy >>= (nHeight - 3000 / Params().SubsidyHalvingInterval());
+    }
+    else
+    if (nHeight > 2000) {
+	nSubsidy = 16 * COIN;
+        nSubsidy >>= (nHeight - 2000 / Params().SubsidyHalvingInterval());
     }
     
     // Inflation phase: Subsidy reaches minimum subsidy
