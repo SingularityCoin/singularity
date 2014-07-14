@@ -124,7 +124,7 @@ alloc_chunk(size_t sz, int freelist_ok)
     res->next_mem = res->u.mem;
     tor_assert(res->next_mem+res->mem_size+SENTINEL_LEN ==
                ((char*)res)+chunk_size);
-    tor_assert(realign_pointer(res->next_mem) == res->next_mem);
+    /*tor_assert(realign_pointer(res->next_mem) == res->next_mem);*/
     SET_SENTINEL(res);
     return res;
   }
