@@ -1276,29 +1276,26 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = nStartSubsidy;
     
-    if (nHeight == 1) return 20608 * COIN;
-    else
-    if (nHeight > 6000) {
-	nSubsidy = 1 * COIN;
-    }
-    else
-    if (nHeight > 5000) {
-	nSubsidy = 2 * COIN;
-    }
-    else
-    if (nHeight > 4000) {
-	nSubsidy = 4 * COIN;
-    }
-    else
-    if (nHeight > 3000) {
-	nSubsidy = 8 * COIN;
-    }
-    else
-    if (nHeight > 2000) {
-	nSubsidy = 16 * COIN;
-    }
-    
-    return nSubsidy + nFees;
+        if (nHeight == 1)
+		nSubsidy = 20608 * COIN;
+		return nSubsidy + nFees;
+	if (nHeight > 6000)
+		nSubsidy = 1 * COIN;
+		return nSubsidy + nFees;
+	if (nHeight > 5000)
+		nSubsidy = 2* * COIN;
+		return nSubsidy + nFees;
+	if (nHeight > 4000)
+		nSubsidy = 4 * COIN;
+		return nSubsidy + nFees;
+	if (nHeight > 3000)
+		nSubsidy = 8 * COIN;
+		return nSubsidy + nFees;
+	if (nHeight > 2000)
+		nSubsidy = 16 * COIN;
+		return nSubsidy + nFees;
+
+return nSubsidy + nFees;		
 }
 
 static const int64 nTargetTimespan = 420; 
